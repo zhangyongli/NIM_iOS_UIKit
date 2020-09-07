@@ -29,19 +29,19 @@
         [self setBackgroundColor:[UIColor whiteColor]];
         
         _voiceButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_voiceButton setImage:[UIImage nim_imageInKit:@"IM_icon_voice"] forState:UIControlStateNormal];
-        [_voiceButton setImage:[UIImage nim_imageInKit:@"IM_icon_voice"] forState:UIControlStateHighlighted];
+        [_voiceButton setImage:[UIImage nim_imageInKit:@"im_icon_voice"] forState:UIControlStateNormal];
+        [_voiceButton setImage:[UIImage nim_imageInKit:@"im_icon_voice"] forState:UIControlStateHighlighted];
         [_voiceButton sizeToFit];
         
         
         _emoticonBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_emoticonBtn setImage:[UIImage nim_imageInKit:@"IM_icon_emoji"] forState:UIControlStateNormal];
-        [_emoticonBtn setImage:[UIImage nim_imageInKit:@"IM_icon_emoji"] forState:UIControlStateHighlighted];
+        [_emoticonBtn setImage:[UIImage nim_imageInKit:@"im_icon_emoji"] forState:UIControlStateNormal];
+        [_emoticonBtn setImage:[UIImage nim_imageInKit:@"im_icon_emoji"] forState:UIControlStateHighlighted];
         [_emoticonBtn sizeToFit];
         
         _moreMediaBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_moreMediaBtn setImage:[UIImage nim_imageInKit:@"IM_icon_more"] forState:UIControlStateNormal];
-        [_moreMediaBtn setImage:[UIImage nim_imageInKit:@"IM_icon_more"] forState:UIControlStateHighlighted];
+        [_moreMediaBtn setImage:[UIImage nim_imageInKit:@"im_icon_more"] forState:UIControlStateNormal];
+        [_moreMediaBtn setImage:[UIImage nim_imageInKit:@"im_icon_more"] forState:UIControlStateHighlighted];
         [_moreMediaBtn sizeToFit];
         
         _recordButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -243,7 +243,7 @@
 
 - (void)updateVoiceBtnImages:(BOOL)selected
 {
-    [self.voiceButton setImage:selected?[UIImage nim_imageInKit:@"IM_icon_voice"]:[UIImage nim_imageInKit:@"IM_icon_voice"] forState:UIControlStateNormal];
+    [self.voiceButton setImage:selected?[UIImage nim_imageInKit:@"im_icon_voice"]:[UIImage nim_imageInKit:@"IM_icon_voice"] forState:UIControlStateNormal];
     [self.voiceButton setImage:selected?[UIImage nim_imageInKit:@"IM_icon_voice"]:[UIImage nim_imageInKit:@"IM_icon_voice"] forState:UIControlStateHighlighted];
 }
 
