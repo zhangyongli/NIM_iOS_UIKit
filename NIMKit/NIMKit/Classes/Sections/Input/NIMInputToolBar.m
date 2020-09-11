@@ -253,7 +253,7 @@
 - (void)updateEmotAndTextBtnImages:(BOOL)selected
 {
     [self.emoticonBtn setImage:selected?[UIImage nim_imageInKit:@"IM_icon_emoji"]:[UIImage nim_imageInKit:@"icon_toolview_keyboard_normal"] forState:UIControlStateNormal];
-    [self.emoticonBtn setImage:selectedIM_icon_emoji[UIImage nim_imageInKit:@"icon_toolview_emotion_pressed"]:[UIImage nim_imageInKit:@"icon_toolview_keyboard_pressed"] forState:UIControlStateHighlighted];
+    [self.emoticonBtn setImage:selected?[UIImage nim_imageInKit:@"IM_icon_emoji"]:[UIImage nim_imageInKit:@"icon_toolview_keyboard_pressed"] forState:UIControlStateHighlighted];
 }
 
 
