@@ -99,7 +99,7 @@
     }
     else
     {
-        color = [UIColor colorWithHex:0x1A73E0 alpha:1];
+        color = [UIColor colorWithHex:0x000000 alpha:1];
     }
     
     _audioBackgroundView.backgroundColor = color;
