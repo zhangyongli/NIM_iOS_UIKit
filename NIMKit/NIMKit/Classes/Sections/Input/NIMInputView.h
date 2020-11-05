@@ -65,5 +65,5 @@ typedef NS_ENUM(NSInteger, NIMAudioRecordPhase) {
 - (void)updateAudioRecordTime:(NSTimeInterval)time;
 - (void)updateVoicePower:(float)power;
 - (void)AtGroup;
-
+- (void)AtAll;
 @end
