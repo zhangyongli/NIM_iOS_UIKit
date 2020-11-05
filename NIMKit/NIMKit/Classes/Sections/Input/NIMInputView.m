@@ -509,11 +509,12 @@
                 config.teamId = self.session.sessionId;
                 config.session = self.session;
                 config.filterIds = @[[NIMSDK sharedSDK].loginManager.currentAccount];
-                NIMContactSelectViewController *vc = [[NIMContactSelectViewController alloc] initWithConfig:config];
-                vc.delegate = self;
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [vc show];
-                });
+                [self AtGroup];
+//                NIMContactSelectViewController *vc = [[NIMContactSelectViewController alloc] initWithConfig:config];
+//                vc.delegate = self;
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [vc show];
+//                });
             }
                 break;
             case NIMSessionTypeSuperTeam:
