@@ -54,6 +54,7 @@
         _recordPhase = AudioRecordPhaseEnd;
         _atCache = [[NIMInputAtCache alloc] init];
         _inputConfig = config;
+        self.allCache = [[NSMutableDictionary alloc] init];
         self.backgroundColor = [UIColor whiteColor];
     }
     return self;
@@ -509,12 +510,13 @@
                 config.teamId = self.session.sessionId;
                 config.session = self.session;
                 config.filterIds = @[[NIMSDK sharedSDK].loginManager.currentAccount];
-                [self AtGroup];
+                [self atGroup];
 //                NIMContactSelectViewController *vc = [[NIMContactSelectViewController alloc] initWithConfig:config];
 //                vc.delegate = self;
 //                dispatch_async(dispatch_get_main_queue(), ^{
 //                    [vc show];
 //                });
+                
             }
                 break;
             case NIMSessionTypeSuperTeam:
@@ -542,7 +544,6 @@
     }
 }
 
-
 - (void)textViewDidChange
 {
     if (self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(onTextChanged:)])
@@ -551,7 +552,11 @@
     }
 }
 
-
+- (void) atGroup {
+    if (self.inputDelegate && [self.inputDelegate respondsToSelector:@selector(atGroup)]) {
+        [self.inputDelegate atGroup];
+    }
+}
 - (void)toolBarDidChangeHeight:(CGFloat)height
 {
     [self sizeToFit];
@@ -600,7 +605,11 @@
 - (void)didPressSend:(id)sender{
     if ([self.actionDelegate respondsToSelector:@selector(onSendText:atUsers:)] && [self.toolBar.contentText length] > 0) {
         NSString *sendText = self.toolBar.contentText;
-        [self.actionDelegate onSendText:sendText atUsers:[self.atCache allAtUid:sendText]];
+        if ([sendText containsString:@"@全体成员"]) {
+            [self.actionDelegate onSendText:sendText atUsers: [self.allCache valueForKey:@"全体成员"]];
+        } else {
+           [self.actionDelegate onSendText:sendText atUsers:[self.atCache allAtUid:sendText]];
+        }
         [self.atCache clean];
         self.toolBar.contentText = @"";
         [self.toolBar layoutIfNeeded];
@@ -703,3 +712,4 @@
 }
 
 @end
+

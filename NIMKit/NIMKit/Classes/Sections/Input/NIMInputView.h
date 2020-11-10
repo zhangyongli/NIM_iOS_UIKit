@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, NIMAudioRecordPhase) {
 @optional
 
 - (void)didChangeInputHeight:(CGFloat)inputHeight;
-
+- (void)atGroup;
 @end
 
 @interface NIMInputView : UIView
